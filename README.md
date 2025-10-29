@@ -129,7 +129,7 @@ O arquivo `manifest_update.txt` detalha todos os componentes que serão atualiza
 
 ## Como Usar
 
-1. Acesse o cadastro através da função `CADZZZ`
+1. Acesse o cadastro através da função `custom.configurador.departamentos.CADZZZ`
 2. Navegue pelos departamentos existentes ou crie novos
 3. Para cada departamento, você pode:
    - Definir código, descrição, status e área responsável
