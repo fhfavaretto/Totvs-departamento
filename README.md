@@ -4,6 +4,12 @@
 
 Este projeto implementa um cadastro completo de departamentos no Protheus utilizando o Framework MVC (Model-View-Controller). O sistema permite gerenciar departamentos com suas respectivas áreas responsáveis e usuários associados.
 
+## Imagens do Projeto
+
+![Tela Principal do Cadastro de Departamentos](images/departamentos-tela-principal.png)
+
+![Grid de Usuários por Departamento](images/departamentos-grid-usuarios.png)
+
 ## Funcionalidades
 
 O cadastro de departamentos permite:
@@ -51,6 +57,10 @@ Totvs-departamento/
 │
 ├── fonte/
 │   └── custom.configurador.departamentos.tlpp    # Código fonte principal
+│
+├── images/
+│   ├── departamentos-tela-principal.png        # Captura de tela principal
+│   └── departamentos-grid-usuarios.png         # Captura de tela da grid de usuários
 │
 ├── tabelas/
 │   ├── six0101.sdb                              # Definição de índices (SIX)
