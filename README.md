@@ -6,9 +6,9 @@ Este projeto implementa um cadastro completo de departamentos no Protheus utiliz
 
 ## Imagens do Projeto
 
-![Tela Principal do Cadastro de Departamentos](images/departamentos-tela-principal.png)
+![Tela Principal do Cadastro de Departamentos](images/tela01.png)
 
-![Grid de Usuários por Departamento](images/departamentos-grid-usuarios.png)
+![Grid de Usuários por Departamento](images/tela02.png)
 
 ## Funcionalidades
 
