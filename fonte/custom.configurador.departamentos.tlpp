@@ -1,0 +1,130 @@
+//Bibliotecas
+#Include "Protheus.ch"
+#Include "TopConn.ch"
+#Include "TbiConn.ch"
+
+#Include "tlpp-core.th"
+#Include "FWMVCDef.ch"
+
+//Declaração da namespace
+Namespace custom.configurador.departamentos
+
+//Variáveis Estáticas
+Static cTitulo := "Cadastro de Departamentos"
+Static cAliasMVC := "ZZZ"
+
+/*/{Protheus.doc} CADZZZ
+Função para cadastro de departamentos
+@autor Fabio Favaretto
+@since 03/06/2025
+@version 1.0
+
+@return Nil
+@fields
+Cabeçalho: ZZZ_COD, ZZZ_DESC, ZZZ_ATIVO, ZZZ_AREA
+Itens: ZZZ_COD (chave de relacionamento), ZZZ_IDSEQ, ZZZ_USRID, ZZZ_USRNOM, ZZZ_USRMAI
+/*/
+
+User Function CADZZZ()
+    Local aArea := FWGetArea()
+    Local oBrowse
+
+    oBrowse := FWMBrowse():New()
+    oBrowse:SetAlias(cAliasMVC)
+    oBrowse:SetDescription(cTitulo)
+    oBrowse:Activate()
+
+    FWRestArea(aArea)
+Return Nil
+
+User Function MenuDef() As Array
+    Local aRot := {} As Array
+
+    Add Option aRot Title "Visualizar" Action "ViewDef.custom.configurador.departamentos.CADZZZ" Operation MODEL_OPERATION_VIEW   Access 0
+    Add Option aRot Title "Incluir"    Action "ViewDef.custom.configurador.departamentos.CADZZZ" Operation MODEL_OPERATION_INSERT Access 0
+    Add Option aRot Title "Alterar"    Action "ViewDef.custom.configurador.departamentos.CADZZZ" Operation MODEL_OPERATION_UPDATE Access 0
+    Add Option aRot Title "Excluir"    Action "ViewDef.custom.configurador.departamentos.CADZZZ" Operation MODEL_OPERATION_DELETE Access 0
+
+Return aRot
+
+User Function ModelDef()
+    Local oModel
+    Local oStruCab := FWFormStruct(1, cAliasMVC, {|cCampo| AllTrim(cCampo) $ "ZZZ_COD;ZZZ_DESC;ZZZ_ATIVO;ZZZ_AREA;"})
+    Local oStruGrid := custom.configurador.departamentos.u_fModStruct()
+
+    oModel := MPFormModel():New("CADZZZM")
+    oModel:AddFields("MdFieldZZZ", NIL, oStruCab)
+    oModel:AddGrid("MdGridZZZ", "MdFieldZZZ", oStruGrid)
+
+    oModel:SetRelation("MdGridZZZ", { ;
+        {"ZZZ_COD", "ZZZ_COD"} ;
+    })
+
+    oModel:GetModel("MdGridZZZ"):SetMaxLine(99)
+    oModel:SetDescription("Cadastro de Departamentos")
+    oModel:SetPrimaryKey({"ZZZ_COD"})
+
+Return oModel
+
+User Function ViewDef()
+    Local oView
+    Local oModel := FWLoadModel("custom.configurador.departamentos.CADZZZ")
+    Local oStruCab := FWFormStruct(2, cAliasMVC, {|cCampo| AllTrim(cCampo) $ "ZZZ_COD;ZZZ_DESC;ZZZ_ATIVO;ZZZ_AREA;"})
+    Local oStruGrid := custom.configurador.departamentos.u_fViewStruct()
+
+
+
+    oView := FWFormView():New()
+    oView:SetModel(oModel)
+    oView:AddField("VIEW_ZZZ", oStruCab, "MdFieldZZZ")
+    oView:AddGrid("GRID_ZZZ", oStruGrid, "MdGridZZZ")
+
+    oView:CreateHorizontalBox("MAIN", 25)
+    oView:CreateHorizontalBox("GRID", 75)
+    oView:SetOwnerView("VIEW_ZZZ", "MAIN")
+    oView:SetOwnerView("GRID_ZZZ", "GRID")
+    oView:EnableControlBar(.T.)
+
+    // Aqui está o comando solicitado:
+    oView:AddIncrementField("GRID_ZZZ", "ZZZ_IDSEQ")
+
+Return oView
+
+// Estrutura da grid (todos os campos dos itens)
+// IMPORTANTE: ZZZ_COD deve estar na grid para fazer a relação com o cabeçalho
+User Function fModStruct()
+    Local oStruct
+    oStruct := FWFormStruct(1, cAliasMVC, {|cCampo| AllTrim(cCampo) $ "ZZZ_COD;ZZZ_IDSEQ;ZZZ_USRID;ZZZ_USRNOM;ZZZ_USRMAI;"})
+Return oStruct
+
+// Estrutura visual da grid (todos os campos dos itens)
+User Function fViewStruct()
+    Local oStruct
+    oStruct := FWFormStruct(2, cAliasMVC, {|cCampo| AllTrim(cCampo) $ "ZZZ_COD;ZZZ_IDSEQ;ZZZ_USRID;ZZZ_USRNOM;ZZZ_USRMAI;"})
+Return oStruct
+
+
+
+User Function zDopc()
+    Local aArea   := GetArea()
+    Local cOpcoes := ""
+ 
+    //Montando as opções de retorno
+    cOpcoes += "1=PDI;"
+    cOpcoes += "2=COMERCIAL;"
+    cOpcoes += "3=LOGISTICA;"
+    cOpcoes += "4=CONTABIL;"
+    cOpcoes += "5=CONTROLADORIA;"
+    cOpcoes += "6=RH;"
+    cOpcoes += "7=FINANCEIRO;"
+    cOpcoes += "8=TI;"
+    cOpcoes += "9=JURIDICO;"
+    cOpcoes += "10=MARKETING;"
+    cOpcoes += "11=PRODUCAO;"
+    cOpcoes += "12=SUPRIMENTOS;"
+
+    RestArea(aArea)
+Return cOpcoes 
+
+
+

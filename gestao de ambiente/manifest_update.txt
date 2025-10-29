@@ -1,0 +1,128 @@
+MANIFESTO DE ATUALIZAÇÃO
+
+Data : 29/10/2025
+Hora : 13:39:16
+Arquivo de atualização diferencial baseado em projeto gerado pelo Configurador
+Projeto : 000002
+Descrição : CADASTRO DE DEPARTAMENTOS                         
+Versão : 0002
+Release de referência : 12.1.2510 
+Responsável pelo Projeto: 000000 - Administrador
+Geração do Pacote: 000000 - Administrador
+-----------------------------
+Componentes do arquivo de atualização :
+
+------------
+SIX
+
+Operação:Inclusão ou Alteração
+Tabela : ZZZ
+Ordem : 1
+
+Operação:Inclusão ou Alteração
+Tabela : ZZZ
+Ordem : 2
+
+
+------------
+SX2
+
+Operação:Inclusão ou Alteração
+Tabela : ZZZ
+
+
+------------
+SX3
+
+Operação:Inclusão ou Alteração
+Campo : ZZZ_FILIAL
+
+Operação:Inclusão ou Alteração
+Campo : ZZZ_COD   
+
+Operação:Inclusão ou Alteração
+Campo : ZZZ_DESC  
+
+Operação:Inclusão ou Alteração
+Campo : ZZZ_ATIVO 
+
+Operação:Inclusão ou Alteração
+Campo : ZZZ_IDSEQ 
+
+Operação:Inclusão ou Alteração
+Campo : ZZZ_USRID 
+
+Operação:Inclusão ou Alteração
+Campo : ZZZ_USRNOM
+
+Operação:Inclusão ou Alteração
+Campo : ZZZ_USRMAI
+
+Operação:Inclusão ou Alteração
+Campo : ZZZ_AREA  
+
+
+------------
+SXB
+
+Operação:Inclusão ou Alteração
+Consulta : ZZZ01 
+Tipo : 1
+Sequência : 01
+Coluna : US
+
+Operação:Inclusão ou Alteração
+Consulta : ZZZ01 
+Tipo : 5
+Sequência : 01
+Coluna :   
+
+Operação:Inclusão ou Alteração
+Consulta : ZZZ01 
+Tipo : 5
+Sequência : 02
+Coluna :   
+
+Operação:Inclusão ou Alteração
+Consulta : ZZZ01 
+Tipo : 5
+Sequência : 03
+Coluna :   
+
+Operação:Inclusão ou Alteração
+Consulta : ZZZ1  
+Tipo : 1
+Sequência : 01
+Coluna : US
+
+Operação:Inclusão ou Alteração
+Consulta : ZZZ1  
+Tipo : 5
+Sequência : 01
+Coluna :   
+
+Operação:Inclusão ou Alteração
+Consulta : ZZZ1  
+Tipo : 5
+Sequência : 02
+Coluna :   
+
+Operação:Inclusão ou Alteração
+Consulta : ZZZ1  
+Tipo : 5
+Sequência : 03
+Coluna :   
+
+
+------------
+Helps (hlppack*.txt)
+
+Chave : ZZZ_FILIAL
+Chave : ZZZ_COD   
+Chave : ZZZ_DESC  
+Chave : ZZZ_ATIVO 
+Chave : ZZZ_IDSEQ 
+Chave : ZZZ_USRID 
+Chave : ZZZ_USRNOM
+Chave : ZZZ_USRMAI
+Chave : ZZZ_AREA  
